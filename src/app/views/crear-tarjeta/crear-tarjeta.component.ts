@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 import { TarjetaCredito } from 'src/app/models/TarjetaCredito';
 import { TarjetaService } from 'src/app/services/tarjeta.service';
 
@@ -10,9 +11,11 @@ import { TarjetaService } from 'src/app/services/tarjeta.service';
 })
 export class CrearTarjetaComponent {
   form: FormGroup;
+  loading:boolean = false;
 
   constructor (fb: FormBuilder,
-              private _tarjetaService:TarjetaService) {
+              private _tarjetaService:TarjetaService,
+              private toastr: ToastrService) {
     this.form = fb.group({
       titular: ['',Validators.required],
       numeroTarjeta: ['',[Validators.required,Validators.minLength(16),Validators.maxLength(16)]],
@@ -31,6 +34,17 @@ export class CrearTarjetaComponent {
       fechaCreacion: new Date(),
       fechaActualizacion: new Date()
     }
-    this._tarjetaService.guardartarjeta(TARJETA);
+
+    this.loading = true;
+
+    this._tarjetaService.guardartarjeta(TARJETA).then(()=> {
+      this.toastr.success('La tarjeta de ha registrado con éxito.','¡Genial!');
+      this.form.reset();
+      this.loading = false;
+    },error => {
+      this.toastr.error('Oops.. Ha habido un problema al guardar la tarjeta ¡Intentalo más tarde!','Error!')
+      console.log(error);
+      this.loading = false;
+    });
   }
 }

@@ -14,6 +14,8 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { FirestoreModule } from '@angular/fire/firestore';
 import { TarjetaService } from './services/tarjeta.service';
 import { FIREBASE_OPTIONS } from '@angular/fire/compat';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -27,6 +29,8 @@ import { FIREBASE_OPTIONS } from '@angular/fire/compat';
     ReactiveFormsModule,
     AngularFireModule,
     FirestoreModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(),
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore())

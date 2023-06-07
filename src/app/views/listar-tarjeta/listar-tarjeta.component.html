@@ -3,13 +3,13 @@
         <h5>Listar tarjeta</h5>
         <table class="table">
             <tbody>
-                <tr>
-                    <td>Diego Silva Gómez</td>
-                    <td>1232123245346522</td>
-                    <td>12/25</td>
+                <tr *ngFor="let tarjeta of listaTarjetas">
+                    <td>{{tarjeta.titular}}</td>
+                    <td>{{tarjeta.numeroTarjeta}}</td>
+                    <td>{{tarjeta.fechaExpiracion}}</td>
                     <td>
                         <i class="fa fa-edit m-1 text-info"></i>
-                        <i class="fa fa-trash-alt m-1 text-danger"></i>
+                        <i (click)="eliminarTarjeta(tarjeta.id)" class="fa fa-trash-alt m-1 text-danger"></i>
                     </td>
                 </tr>
             </tbody>

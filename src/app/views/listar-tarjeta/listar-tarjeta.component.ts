@@ -33,12 +33,16 @@ export class ListarTarjetaComponent implements OnInit{
   eliminarTarjeta(id:any) {
     this._tarjetaService.eliminarTarjeta(id).then(()=> {
 
-      this.toastr.success('Se ha eliminado la tarjeta correctamente.','¡Tarjeta eliminada!"');
+      this.toastr.success('Se ha eliminado la tarjeta correctamente.','¡Tarjeta eliminada!');
 
     },error => {
 
       this.toastr.error('No se pudo eliminar, Error: '+error,'Error');
 
     });
+  }
+
+  editarTarjeta(tarjeta:TarjetaCredito) {
+    this._tarjetaService.addTarjetaEdit(tarjeta);
   }
 }

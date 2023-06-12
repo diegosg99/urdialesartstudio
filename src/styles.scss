@@ -1,8 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
 body {
-    background: #E0EAFC;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #CFDEF3, #E0EAFC);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #CFDEF3, #E0EAFC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    //background: #E0EAFC;  /* fallback for old browsers */
+    //background: -webkit-linear-gradient(to right, #CFDEF3, #E0EAFC);  /* Chrome 10-25, Safari 5.1-6 */
+    //background: linear-gradient(to right, #CFDEF3, #E0EAFC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: var(--white);//#f7e7d0 !important;
+    font-family: 'Playfair Display', serif;
+
 }
 
 .titulo {
@@ -10,3 +13,30 @@ body {
     color: #ffb75e;
     font-family: 'Montserrat', sans-serif;
 }
+
+*,
+*::before,
+*::after{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root{
+  --white: rgba(255, 255, 255,1.0);
+  --pink: rgba(232, 67, 147,1.0);
+  --black: rgba(0, 0, 0, .8);
+}
+
+html{ font-size: 17px; }
+
+body{
+  //background-image: url(https://images.unsplash.com/photo-1543682704-15adeb008ac4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=341&q=80);
+}
+
+.card-body {
+  background-color: #cbd4c3;
+}
+
+
+//color palette rosita: #45062E, #CED3DC47,#ffb75e

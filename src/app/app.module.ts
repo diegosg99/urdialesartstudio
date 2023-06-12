@@ -16,12 +16,22 @@ import { TarjetaService } from './services/tarjeta.service';
 import { FIREBASE_OPTIONS } from '@angular/fire/compat';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+import { LandingComponent } from './views/landing/landing.component';
+import { PlataformaPagoComponent } from './views/plataforma-pago/plataforma-pago.component';
+import { NavbarComponent } from './views/navbar/navbar.component';
+import { CursosComponent } from './views/cursos/cursos.component';
+import { ProfileComponent } from './views/profile/profile.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListarTarjetaComponent,
-    CrearTarjetaComponent
+    CrearTarjetaComponent,
+    LandingComponent,
+    PlataformaPagoComponent,
+    NavbarComponent,
+    CursosComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

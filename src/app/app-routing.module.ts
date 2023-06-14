@@ -4,6 +4,7 @@ import { LandingComponent } from './views/landing/landing.component';
 import { ProfileComponent } from './views/profile/profile.component';
 import { CursosComponent } from './views/cursos/cursos.component';
 import { AboutComponent } from './views/about/about.component';
+import { CartComponent } from './views/cart/cart.component';
 
 const routes: Routes = [
   // {
@@ -29,6 +30,10 @@ const routes: Routes = [
   {
     path: "about",
     component: AboutComponent
+  },
+  {
+    path: "cart",
+    component: CartComponent
   }
 ];
 

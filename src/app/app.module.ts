@@ -24,6 +24,8 @@ import { ProfileComponent } from './views/profile/profile.component';
 import { ParallaxComponent } from './views/parallax/parallax.component';
 import { ParallaxDirective } from './parallax.directive';
 import { AboutComponent } from './views/about/about.component';
+import { Usuario } from './models/Usuario';
+import { CartComponent } from './views/cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,8 @@ import { AboutComponent } from './views/about/about.component';
     ProfileComponent,
     ParallaxComponent,
     ParallaxDirective,
-    AboutComponent
+    AboutComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
@@ -53,6 +56,7 @@ import { AboutComponent } from './views/about/about.component';
   ],
   providers: [
     TarjetaService,
+    
     { provide: FIREBASE_OPTIONS, useValue: environment.firebase }
   ],
   bootstrap: [AppComponent]

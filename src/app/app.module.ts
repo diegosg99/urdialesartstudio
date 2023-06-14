@@ -21,6 +21,9 @@ import { PlataformaPagoComponent } from './views/plataforma-pago/plataforma-pago
 import { NavbarComponent } from './views/navbar/navbar.component';
 import { CursosComponent } from './views/cursos/cursos.component';
 import { ProfileComponent } from './views/profile/profile.component';
+import { ParallaxComponent } from './views/parallax/parallax.component';
+import { ParallaxDirective } from './parallax.directive';
+import { AboutComponent } from './views/about/about.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +34,10 @@ import { ProfileComponent } from './views/profile/profile.component';
     PlataformaPagoComponent,
     NavbarComponent,
     CursosComponent,
-    ProfileComponent
+    ProfileComponent,
+    ParallaxComponent,
+    ParallaxDirective,
+    AboutComponent
   ],
   imports: [
     BrowserModule,

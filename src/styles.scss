@@ -3,7 +3,7 @@ body {
     //background: #E0EAFC;  /* fallback for old browsers */
     //background: -webkit-linear-gradient(to right, #CFDEF3, #E0EAFC);  /* Chrome 10-25, Safari 5.1-6 */
     //background: linear-gradient(to right, #CFDEF3, #E0EAFC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    background: var(--white);//#f7e7d0 !important;
+    background: #dbe4ee !important;//#f7e7d0 !important;
     //background-color: #172337 !important;
     font-family: 'Playfair Display', serif;
 
@@ -31,17 +31,14 @@ body {
 
 html{ font-size: 17px; }
 
-body{
-  //background-image: url(https://images.unsplash.com/photo-1543682704-15adeb008ac4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=341&q=80);
-}
-
 .card-body {
-  background-color: #cbd4c3;
+  background-color: #f8f8f8;
+  //background-color: #39b2ad; LOGO AI
 }
 
 .card-body-post {
-  color: #cbd4c3 !important;
-  background-color: #172337ab !important;
+  color: #434c5e !important;
+  background-color: #f8f8f8 !important;
 }
 
 //color palette rosita: #45062E, #CED3DC47,#ffb75e

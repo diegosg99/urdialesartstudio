@@ -26,6 +26,9 @@ import { ParallaxDirective } from './parallax.directive';
 import { AboutComponent } from './views/about/about.component';
 import { Usuario } from './models/Usuario';
 import { CartComponent } from './views/cart/cart.component';
+import { UploadPostComponent } from './views/upload-post/upload-post.component';
+import { Storage } from '@angular/fire/storage';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
 
 @NgModule({
   declarations: [
@@ -40,7 +43,8 @@ import { CartComponent } from './views/cart/cart.component';
     ParallaxComponent,
     ParallaxDirective,
     AboutComponent,
-    CartComponent
+    CartComponent,
+    UploadPostComponent
   ],
   imports: [
     BrowserModule,
@@ -56,7 +60,7 @@ import { CartComponent } from './views/cart/cart.component';
   ],
   providers: [
     TarjetaService,
-    
+    AngularFirestore,
     { provide: FIREBASE_OPTIONS, useValue: environment.firebase }
   ],
   bootstrap: [AppComponent]

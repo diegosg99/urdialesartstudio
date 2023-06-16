@@ -10,6 +10,7 @@ import { Usuario } from 'src/app/models/Usuario';
 export class ProfileComponent implements OnInit {
 
   user!: Usuario;
+  admin: boolean = true;
 
   constructor () {
   }

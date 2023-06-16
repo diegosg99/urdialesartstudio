@@ -6,6 +6,8 @@ import { CursosComponent } from './views/cursos/cursos.component';
 import { AboutComponent } from './views/about/about.component';
 import { CartComponent } from './views/cart/cart.component';
 import { UploadPostComponent } from './views/upload-post/upload-post.component';
+import { UploadCursoComponent } from './views/upload-curso/upload-curso.component';
+
 
 const routes: Routes = [
   // {
@@ -39,6 +41,10 @@ const routes: Routes = [
   {
     path: "uploadPost",
     component: UploadPostComponent
+  },
+  {
+    path: "uploadCourse",
+    component: UploadCursoComponent
   }
 ];
 

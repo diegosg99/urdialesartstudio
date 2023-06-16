@@ -39,15 +39,15 @@
           </div>
         </div>
 
-        <div class="col-2"></div>
+        <div class="col-2">
+          <div class="row" style="flex-direction: column;text-align: center;align-items: center;">
+            <a class="text-light btn btn-primary mb-3" routerLink="/uploadPost" routerLinkActive="active" ariaCurrentWhenActive="page">Crear publicación</a>
+            <a class="text-light btn btn-primary" routerLink="/uploadCourse" routerLinkActive="active" ariaCurrentWhenActive="page">Crear curso</a>
+          </div>
+        </div>
 
       </div>
 
         <app-plataforma-pago></app-plataforma-pago>
     </div>
-
-    <div style="position: fixed;bottom: 3rem;right: 3rem;" class="btn btn-primary">
-      <a class="text-light" routerLink="/uploadPost" routerLinkActive="active" ariaCurrentWhenActive="page">Crear publicación</a>
-    </div>
-
   </section>

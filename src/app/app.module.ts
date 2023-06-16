@@ -29,6 +29,7 @@ import { CartComponent } from './views/cart/cart.component';
 import { UploadPostComponent } from './views/upload-post/upload-post.component';
 import { Storage } from '@angular/fire/storage';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { UploadCursoComponent } from './views/upload-curso/upload-curso.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
     ParallaxDirective,
     AboutComponent,
     CartComponent,
-    UploadPostComponent
+    UploadPostComponent,
+    UploadCursoComponent
   ],
   imports: [
     BrowserModule,

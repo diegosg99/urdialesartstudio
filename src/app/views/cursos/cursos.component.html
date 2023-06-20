@@ -8,35 +8,38 @@
     </div>
     <ul>
         <li>
-            <div class="card mb-4 mx-5">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-3">
-                            <img>
-                        </div>
-                        <div class="col-9">
+            <div class="col-1"></div>
+
+        <div class="col-10 mt-3" id="posts">
+            <ul style="list-style: none;padding:0px;">
+                <li *ngFor="let curso of courses">
+                    <div class="card mb-5 mr-3">
+                        <div class="card-body card-body-post" style="padding:0;">
                             <div class="row">
-                                <div class="col-sm-3">
-                                    <p class="mb-0">Full Name</p>
+                                <div class="col-5">
+                                    <img src="{{curso.photo}}" width="100%">
                                 </div>
-                                <div class="col-sm-9">
-                                    <p class="text-muted mb-0">Johnatan Smith</p>
+                                <div class="col-7">
+                                    <div class="row">
+                                        <div class="col-sm">
+                                            <p class="text-center post-title m-3">{{curso.nombre}} --- {{curso.price}}€</p>
+                                        </div>
+                                    </div>
+                                        <hr>
+                                    <div class="row">
+                                        <div class="col-sm"><!--{{post.description.slice(0,120)}}-->
+                                            <p class="mb-0 p-3" style="font-size: 14px;">{{curso.descripcion.slice(0,120)}}...</p>
+                                        </div>
+                                    </div>
                                 </div>
-                                </div>
-                                <hr>
-                                <div class="row">
-                                <div class="col-sm-3">
-                                    <p class="mb-0">Email</p>
-                                </div>
-                                <div class="col-sm-9">
-                                    <p class="text-muted mb-0">example@example.com</p>
-                                </div>
-                                </div>
+                            </div>
                         </div>
                     </div>
-                    
-                </div>
-            </div>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="col-1"></div>
         </li>
-    </ul>
+    </ul>    
 </div>

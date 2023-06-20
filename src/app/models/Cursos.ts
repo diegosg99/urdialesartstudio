@@ -6,9 +6,9 @@ export class Curso {
     fechaCreacion: Date;
     fechaActualizacion: Date;
     linkContent: string;
-    alumnos: Array<string>|any;
+    price: number;
 
-    constructor(nombre:string,descripcion:string,photo:string,fechaCreacion:Date,fechaActualizacion:Date,linkContent:string,alumnos:Array<string>|any) {
+    constructor(nombre:string,descripcion:string,photo:string,fechaCreacion:Date,fechaActualizacion:Date,linkContent:string,price:number) {
 
         this.nombre = nombre;
         this.descripcion = descripcion;
@@ -16,6 +16,6 @@ export class Curso {
         this.fechaCreacion = fechaCreacion;
         this.fechaActualizacion = fechaActualizacion;
         this.linkContent = linkContent;
-        this.alumnos = alumnos;
+        this.price = price;
     }
 }

@@ -3,6 +3,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { TarjetaCredito } from 'src/app/models/TarjetaCredito';
 import { TarjetaService } from 'src/app/services/tarjeta.service';
+import { Stripe } from 'stripe';
+
 
 @Component({
   selector: 'app-crear-tarjeta',
@@ -14,6 +16,8 @@ export class CrearTarjetaComponent implements OnInit {
   loading:boolean = false;
   titulo:string = 'Agregar Tarjeta';
   id: string | undefined;
+
+  stripe!: Stripe;
 
   constructor (fb: FormBuilder,
               private _tarjetaService:TarjetaService,
@@ -94,4 +98,23 @@ export class CrearTarjetaComponent implements OnInit {
     }).then(() => this.titulo = 'Agregar Tarjeta');
 
   }
+    
+  // stripper = () => {
+  //   const options = {
+  //     layout: {
+  //       type: 'tabs',
+  //       defaultCollapsed: false,
+  //     }
+  //   };
+
+
+  //   this.stripe = new Stripe('pk_test_51NKyaJLz2h9Y2LvLO1z09I3LyBhgmnV8pQe7tgDfZv67qKF8CxJV7j3MkfA8IhtCalZKxoVF3ZVXqGRsiqEqqQAo00nmJKDMmf', options);
+  //   const appearance = { /* appearance */ };
+
+  //   const elements = this.stripe.elements({ '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'
+  //   , appearance });
+  //   const paymentElement = elements.create('payment', options);
+  //   paymentElement.mount('#payment-element');
+    
+  // }
 }

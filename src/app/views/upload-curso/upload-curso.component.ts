@@ -18,53 +18,56 @@ export class UploadCursoComponent {
 
   constructor(
     fb: FormBuilder,
-    private _postService:CourseService,
+    private _courseService:CourseService,
     private toastr: ToastrService
   ) {
     this.form = fb.group({
-      titulo: ['',Validators.required],
+      nombre: ['',Validators.required],
       descripcion: ['',[Validators.required,Validators.minLength(16)]],
       photo: [''],
-      curso: ['']
+      curso: [''],
+      price: [''],
+      link: ['']
     })
   }
 
   ngOnInit(): void {}
 
-  postArticle = () => {
+  postCourse = () => {
     if (this.id == undefined) {
-      this.uploadPost();
+      this.uploadCourse();
     }else{
       this.editarPost(this.id);
     } 
   }
 
-  uploadPost = () => {
+  uploadCourse = () => {
 
-    // const CURSO: Curso = {
-    //   titulo: this.form.value.titulo,
-    //   descripcion: this.form.value.descripcion,
-    //   photo: this.imageFile.link,
-    //   curso: this.form.value.curso,
-    //   fechaCreacion: new Date(),
-    //   fechaActualizacion: new Date()
-    // }
+    const CURSO: Curso = {
+      nombre: this.form.value.nombre,
+      descripcion: this.form.value.descripcion,
+      photo: this.imageFile.link,
+      fechaCreacion: new Date(),
+      fechaActualizacion: new Date(),
+      linkContent: this.form.value.link,
+      price: this.form.value.price
+    }
 
-    // this.loading = true;
+    this.loading = true;
 
-    // this._postService.uploadPost(POST,this.imageRaw).then(()=> {
-    //   this.toastr.success('La publicación se ha registrado con éxito.','¡Genial!');
-    //   //this.form.reset();
-    //   this.loading = false;
-    // },(error: any) => {
-    //   this.toastr.error('Oops.. Ha habido un problema al subir la publicación ¡Intentalo más tarde!','Error!')
-    //   console.log(error);
-    //   this.loading = false;
-    // });
+    this._courseService.uploadCourse(CURSO,this.imageRaw).then(()=> {
+      this.toastr.success('La publicación se ha registrado con éxito.','¡Genial!');
+      //this.form.reset();
+      this.loading = false;
+    },(error: any) => {
+      this.toastr.error('Oops.. Ha habido un problema al subir la publicación ¡Intentalo más tarde!','Error!')
+      console.log(error);
+      this.loading = false;
+    });
   }
 
   editarPost = (id:string) => {
-    const POST: any = {
+    const CURSO: any = {
       titulo: this.form.value.titulo,
       descripcion: this.form.value.descripcion,
       photo: this.form.value.photo,

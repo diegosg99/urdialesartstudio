@@ -30,6 +30,7 @@ import { UploadPostComponent } from './views/upload-post/upload-post.component';
 import { Storage } from '@angular/fire/storage';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { UploadCursoComponent } from './views/upload-curso/upload-curso.component';
+import { PaymentService } from './services/payment.service';
 
 @NgModule({
   declarations: [
@@ -63,6 +64,7 @@ import { UploadCursoComponent } from './views/upload-curso/upload-curso.componen
   providers: [
     TarjetaService,
     AngularFirestore,
+    PaymentService,
     { provide: FIREBASE_OPTIONS, useValue: environment.firebase }
   ],
   bootstrap: [AppComponent]

@@ -33,6 +33,7 @@ import { UploadCursoComponent } from './views/upload-curso/upload-curso.componen
 import { PaymentService } from './services/payment.service';
 import { ProductosComponent } from './views/productos/productos.component';
 import { PostComponent } from './views/post/post.component';
+import { CrudComponent } from './views/crud/crud.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import { PostComponent } from './views/post/post.component';
     UploadPostComponent,
     UploadCursoComponent,
     ProductosComponent,
-    PostComponent
+    PostComponent,
+    CrudComponent
   ],
   imports: [
     BrowserModule,

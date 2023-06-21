@@ -27,3 +27,60 @@ p {
   font-size: 18px;
   color: #555555;
 }
+
+body{
+  background-color:#dce3f0;
+}
+
+.height{
+  
+  height:100vh;
+}
+
+.card{
+  
+  width:350px;
+  height:340px;
+}
+
+.image{
+  position:absolute;
+  right:12px;
+  top:10px;
+}
+
+.main-heading{
+  
+  font-size:40px;
+  color:#555555 !important;
+}
+
+.ratings i{
+  
+  color:orange;
+  
+}
+
+.user-ratings h6{
+  margin-top:2px;
+}
+
+.colors{
+  display:flex;
+  margin-top:2px;
+}
+
+.colors span{
+  width:15px;
+  height:15px;
+  border-radius:50%;
+  cursor:pointer;
+  display:flex;
+  margin-right:6px;
+}
+
+.btn-primary{
+  
+  height:48px;
+  font-size:18px;
+}

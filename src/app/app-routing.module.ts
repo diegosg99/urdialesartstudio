@@ -9,6 +9,7 @@ import { UploadPostComponent } from './views/upload-post/upload-post.component';
 import { UploadCursoComponent } from './views/upload-curso/upload-curso.component';
 import { ProductosComponent } from './views/productos/productos.component';
 import { PostComponent } from './views/post/post.component';
+import { CrudComponent } from './views/crud/crud.component';
 
 
 const routes: Routes = [
@@ -53,8 +54,12 @@ const routes: Routes = [
     component: ProductosComponent
   },
   {
-    path: "post",
+    path: "post/:id",
     component: PostComponent
+  },
+  {
+    path: "crud",
+    component: CrudComponent
   }
 ];
 

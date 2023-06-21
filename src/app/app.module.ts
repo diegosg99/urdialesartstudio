@@ -31,6 +31,8 @@ import { Storage } from '@angular/fire/storage';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { UploadCursoComponent } from './views/upload-curso/upload-curso.component';
 import { PaymentService } from './services/payment.service';
+import { ProductosComponent } from './views/productos/productos.component';
+import { PostComponent } from './views/post/post.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +49,9 @@ import { PaymentService } from './services/payment.service';
     AboutComponent,
     CartComponent,
     UploadPostComponent,
-    UploadCursoComponent
+    UploadCursoComponent,
+    ProductosComponent,
+    PostComponent
   ],
   imports: [
     BrowserModule,

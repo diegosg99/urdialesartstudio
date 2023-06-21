@@ -7,6 +7,8 @@ import { AboutComponent } from './views/about/about.component';
 import { CartComponent } from './views/cart/cart.component';
 import { UploadPostComponent } from './views/upload-post/upload-post.component';
 import { UploadCursoComponent } from './views/upload-curso/upload-curso.component';
+import { ProductosComponent } from './views/productos/productos.component';
+import { PostComponent } from './views/post/post.component';
 
 
 const routes: Routes = [
@@ -45,6 +47,14 @@ const routes: Routes = [
   {
     path: "uploadCourse",
     component: UploadCursoComponent
+  },
+  {
+    path: "tienda",
+    component: ProductosComponent
+  },
+  {
+    path: "post",
+    component: PostComponent
   }
 ];
 

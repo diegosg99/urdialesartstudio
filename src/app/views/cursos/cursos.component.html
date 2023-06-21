@@ -6,40 +6,49 @@
             <h1 class="logo mb-5 p-5 w-100">Cursos</h1>
         </div>
     </div>
-    <ul>
-        <li>
-            <div class="col-1"></div>
 
-        <div class="col-10 mt-3" id="posts">
-            <ul style="list-style: none;padding:0px;">
-                <li *ngFor="let curso of courses">
-                    <div class="card mb-5 mr-3">
-                        <div class="card-body card-body-post" style="padding:0;">
-                            <div class="row">
-                                <div class="col-5">
-                                    <img src="{{curso.photo}}" width="100%">
-                                </div>
-                                <div class="col-7">
-                                    <div class="row">
-                                        <div class="col-sm">
-                                            <p class="text-center post-title m-3">{{curso.nombre}} --- {{curso.price}}€</p>
+    <div class="row">
+        <ul style="list-style: none;padding:0px;">
+            <li *ngFor="let curso of courses">
+                <div class="row">
+                    <div class="col-1"></div>
+                    <div class="col-10 mt-3" id="posts">
+                        <div class="card mb-5 mr-3">
+                            <div class="card-body card-body-post" style="padding:0;">
+                                <div class="row">
+                                    <div class="col-5">
+                                        <img src="{{curso.photo}}" width="100%">
+                                    </div>
+                                    <div class="col-7 container-fluid align-items-end" style="position: relative;">
+
+                                        <div class="row">
+                                            <div class="col-sm-12 row justify-content-between mt-3 mb-2">
+                                                <span class=" post-title col">{{curso.nombre}}</span>
+                                                <span class="text-center post-title col-2">{{curso.price}}€</span>
+                                                
+                                            </div>
+                                        </div>
+                                            <hr>
+                                        <div class="row">
+                                            <div class="col-sm-12"><!--{{post.description.slice(0,120)}}-->
+                                                <p class="mb-0 p-3" style="font-size: 14px;">{{curso.descripcion.slice(0,320)}}...</p>
+                                            </div>
+                                        </div>
+                                        <div style="position: absolute; bottom: 1em;width: 100%;justify-content: center;display: flex;padding-right: 3em;">
+                                            <a class="btn btn-primary col" href="{{curso.linkContent}}">Acceder al curso</a>
+
                                         </div>
                                     </div>
-                                        <hr>
-                                    <div class="row">
-                                        <div class="col-sm"><!--{{post.description.slice(0,120)}}-->
-                                            <p class="mb-0 p-3" style="font-size: 14px;">{{curso.descripcion.slice(0,120)}}...</p>
-                                        </div>
-                                    </div>
+                                    <!-- <div class="d-flex justify-content-center">
+                                        
+                                    </div> -->
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </li>
-            </ul>
-        </div>
-        
-        <div class="col-1"></div>
-        </li>
-    </ul>    
+                    </div> 
+                    <div class="col-1"></div>
+                </div>
+            </li>
+        </ul>
+    </div>
 </div>

@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { PostService } from 'src/app/services/post.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-post',
@@ -6,20 +8,22 @@ import { Component } from '@angular/core';
   styleUrls: ['./post.component.scss']
 })
 export class PostComponent {
+  idPost:any;
   post:any;
   
-  constructor(){}
+  constructor(private _postService:PostService,private _Activatedroute:ActivatedRoute){}
 
   ngOnInit(): void {
-    // this._postservice.getPosts().subscribe(posts=>{
 
-    //   let processedPosts: any[] = [];
+    this.idPost = this._Activatedroute.snapshot.params['id'];
 
-    //   posts.forEach((post: any)=>{
-    //     processedPosts = [...processedPosts,post.payload.doc.data()];
-    //   })
-    //   this.posts=processedPosts;
-    //   console.log(this.posts);
-    // });
+    this._postService.getPost(this.idPost).subscribe(post=>{
+
+      let processedPost: any;
+
+      processedPost = post.payload.doc.data();
+      this.post=processedPost;
+      console.log(this.post);
+    });
   }
 }

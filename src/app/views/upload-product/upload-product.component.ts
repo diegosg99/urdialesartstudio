@@ -43,7 +43,7 @@ export class UploadProductComponent {
 
   uploadProduct = () => {
 
-    const PRODUCT: Product = {
+    const PRODUCT: any = {
       nombre: this.form.value.nombre,
       descripcion: this.form.value.descripcion,
       photo: this.imageFile.link,

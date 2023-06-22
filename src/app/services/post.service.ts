@@ -42,8 +42,8 @@ export class PostService {
     return this.firebase.collection('posts',ref => ref.orderBy('fechaActualizacion','asc')).snapshotChanges();
   }
 
-  getPost = () => {
-    
+  getPost = (id:string):Observable<any> => {
+    return this.firebase.collection('posts').snapshotChanges();
   }
 }
 

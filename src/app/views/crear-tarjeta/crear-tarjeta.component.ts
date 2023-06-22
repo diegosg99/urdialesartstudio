@@ -55,13 +55,13 @@ export class CrearTarjetaComponent implements OnInit {
   }
 
   agregarTarjeta() {
-    const TARJETA: TarjetaCredito = {
+    const TARJETA: any = {
       titular: this.form.value.titular,
       numeroTarjeta: this.form.value.numeroTarjeta,
       fechaExpiracion: this.form.value.fechaExpiracion,
       cvv: this.form.value.cvv,
       fechaCreacion: new Date(),
-      fechaActualizacion: new Date()
+      fechaActualizacion: new Date(),
     }
 
     this.loading = true;

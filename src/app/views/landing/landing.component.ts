@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable, Subject } from 'rxjs';
 import { PostService } from 'src/app/services/post.service';
 import { __values } from 'tslib';
@@ -12,7 +13,7 @@ export class LandingComponent implements OnInit{
   
   posts:any;
   
-  constructor(private _postservice: PostService){}
+  constructor(private _postservice: PostService,private router:Router){}
 
   ngOnInit(): void {
     this._postservice.getPosts().subscribe(posts=>{

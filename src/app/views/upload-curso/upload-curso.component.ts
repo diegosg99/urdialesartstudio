@@ -43,7 +43,7 @@ export class UploadCursoComponent {
 
   uploadCourse = () => {
 
-    const CURSO: Curso = {
+    const CURSO: any = {
       nombre: this.form.value.nombre,
       descripcion: this.form.value.descripcion,
       photo: this.imageFile.link,

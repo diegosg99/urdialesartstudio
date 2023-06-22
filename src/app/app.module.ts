@@ -34,6 +34,8 @@ import { PaymentService } from './services/payment.service';
 import { ProductosComponent } from './views/productos/productos.component';
 import { PostComponent } from './views/post/post.component';
 import { CrudComponent } from './views/crud/crud.component';
+import { UploadProductComponent } from './views/upload-product/upload-product.component';
+import { ProductService } from './services/product.service';
 
 @NgModule({
   declarations: [
@@ -53,7 +55,8 @@ import { CrudComponent } from './views/crud/crud.component';
     UploadCursoComponent,
     ProductosComponent,
     PostComponent,
-    CrudComponent
+    CrudComponent,
+    UploadProductComponent
   ],
   imports: [
     BrowserModule,
@@ -71,6 +74,7 @@ import { CrudComponent } from './views/crud/crud.component';
     TarjetaService,
     AngularFirestore,
     PaymentService,
+    ProductService,
     { provide: FIREBASE_OPTIONS, useValue: environment.firebase }
   ],
   bootstrap: [AppComponent]

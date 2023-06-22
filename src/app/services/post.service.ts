@@ -8,7 +8,7 @@ import { Post } from '../models/Post';
 @Injectable({
   providedIn: 'root'
 })
-export class UploadPostService {
+export class PostService {
 
   private post$ = new Subject<any>();
 
@@ -40,6 +40,10 @@ export class UploadPostService {
 
   getPosts = ():Observable<any> => {
     return this.firebase.collection('posts',ref => ref.orderBy('fechaActualizacion','asc')).snapshotChanges();
+  }
+
+  getPost = () => {
+    
   }
 }
 

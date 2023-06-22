@@ -6,20 +6,20 @@ import { Component } from '@angular/core';
   styleUrls: ['./post.component.scss']
 })
 export class PostComponent {
-  posts:any;
+  post:any;
   
-  constructor(private _uploadPostservice: UploadPostService){}
+  constructor(){}
 
   ngOnInit(): void {
-    this._uploadPostservice.getPosts().subscribe(posts=>{
+    // this._postservice.getPosts().subscribe(posts=>{
 
-      let processedPosts: any[] = [];
+    //   let processedPosts: any[] = [];
 
-      posts.forEach((post: any)=>{
-        processedPosts = [...processedPosts,post.payload.doc.data()];
-      })
-      this.posts=processedPosts;
-      console.log(this.posts);
-    });
+    //   posts.forEach((post: any)=>{
+    //     processedPosts = [...processedPosts,post.payload.doc.data()];
+    //   })
+    //   this.posts=processedPosts;
+    //   console.log(this.posts);
+    // });
   }
 }

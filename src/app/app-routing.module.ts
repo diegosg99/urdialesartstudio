@@ -10,6 +10,7 @@ import { UploadCursoComponent } from './views/upload-curso/upload-curso.componen
 import { ProductosComponent } from './views/productos/productos.component';
 import { PostComponent } from './views/post/post.component';
 import { CrudComponent } from './views/crud/crud.component';
+import { UploadProductComponent } from './views/upload-product/upload-product.component';
 
 
 const routes: Routes = [
@@ -48,6 +49,10 @@ const routes: Routes = [
   {
     path: "uploadCourse",
     component: UploadCursoComponent
+  },
+  {
+    path: "uploadProduct",
+    component: UploadProductComponent
   },
   {
     path: "tienda",

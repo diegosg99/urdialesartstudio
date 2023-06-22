@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
-import { UploadPostService } from 'src/app/services/upload-post.service';
+import { PostService } from 'src/app/services/post.service';
 import { __values } from 'tslib';
 
 @Component({
@@ -12,10 +12,10 @@ export class LandingComponent implements OnInit{
   
   posts:any;
   
-  constructor(private _uploadPostservice: UploadPostService){}
+  constructor(private _postservice: PostService){}
 
   ngOnInit(): void {
-    this._uploadPostservice.getPosts().subscribe(posts=>{
+    this._postservice.getPosts().subscribe(posts=>{
 
       let processedPosts: any[] = [];
 

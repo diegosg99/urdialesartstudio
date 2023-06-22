@@ -2,15 +2,16 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { PostService } from 'src/app/services/post.service';
-import { Post } from '../../models/Post';
+import { Product } from '../../models/Product';
+import { ProductService } from 'src/app/services/product.service';
 
 @Component({
-  selector: 'app-upload-post',
-  templateUrl: './upload-post.component.html',
-  styleUrls: ['./upload-post.component.scss']
+  selector: 'app-upload-product',
+  templateUrl: './upload-product.component.html',
+  styleUrls: ['./upload-product.component.scss']
 })
-export class UploadPostComponent implements OnInit{
-
+export class UploadProductComponent {
+  
   form: FormGroup;
   loading:boolean = false;
   id: string | undefined;
@@ -19,14 +20,14 @@ export class UploadPostComponent implements OnInit{
 
   constructor(
     fb: FormBuilder,
-    private _postService:PostService,
+    private _productService:ProductService,
     private toastr: ToastrService
   ) {
     this.form = fb.group({
-      titulo: ['',Validators.required],
+      nombre: ['',Validators.required],
       descripcion: ['',[Validators.required,Validators.minLength(16)]],
       photo: [''],
-      curso: ['']
+      price: ['']
     })
   }
 
@@ -34,31 +35,31 @@ export class UploadPostComponent implements OnInit{
 
   postArticle = () => {
     if (this.id == undefined) {
-      this.uploadPost();
+      this.uploadProduct();
     }else{
       this.editarPost(this.id);
     } 
   }
 
-  uploadPost = () => {
+  uploadProduct = () => {
 
-    const POST: Post = {
-      titulo: this.form.value.titulo,
+    const PRODUCT: Product = {
+      nombre: this.form.value.nombre,
       descripcion: this.form.value.descripcion,
       photo: this.imageFile.link,
-      curso: this.form.value.curso,
       fechaCreacion: new Date(),
-      fechaActualizacion: new Date()
+      fechaActualizacion: new Date(),
+      price: this.form.value.price
     }
 
     this.loading = true;
 
-    this._postService.uploadPost(POST,this.imageRaw).then(()=> {
-      this.toastr.success('La publicación se ha registrado con éxito.','¡Genial!');
+    this._productService.uploadProduct(PRODUCT,this.imageRaw).then(()=> {
+      this.toastr.success('Se ha publicado el producto con éxito.','¡Genial!');
       this.form.reset();
       this.loading = false;
     },(error: any) => {
-      this.toastr.error('Oops.. Ha habido un problema al subir la publicación ¡Intentalo más tarde!','Error!')
+      this.toastr.error('Oops... Ha habido un problema al subir el producto ¡Intentalo más tarde!','Error!')
       console.log(error);
       this.loading = false;
     });
